@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --hour: 156;
+    --bkg-color: hsl(var(--hour), 30% 75%);
+}
+
+.main-container{
+    background-color: darkorange;
+    font-size: 2rem;
+}
