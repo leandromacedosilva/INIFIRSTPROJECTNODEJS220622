@@ -1,0 +1,7 @@
+ -------- requisitos do software ---------------------------------
+ deve ser possível criar uma conta
+  ----------------------- dados da conta -------------------------
+  cpf       - > string
+  name      - > string
+  id        - > uuid 
+  statement - > []
