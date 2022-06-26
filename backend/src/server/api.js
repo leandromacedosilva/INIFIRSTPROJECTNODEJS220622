@@ -5,6 +5,9 @@ const express = require('express');
 // atribuição do método EXPRESS() a uma VAR.
 const app = express();
 
+// import library UUID V4.
+const {v4: uuidv4} = require('uuid');
+
 //import middleware for express middlewares
 app.use(express.json());
 
@@ -13,7 +16,26 @@ const customers = [];
 
 app.post('/account', (request, response) => {
     /* var cpf e name usando desestruturação */
-    const { cpf, name } = request.body;
+    const { name, lastname, cpf, rg  } = request.body;
+    // regra de negócio para cadastro
+    const customersAlreadyExists = customers.some(
+        (customers)=>customers.cpf === cpf
+    );
+    // informa que o CPF já está na base de dados.
+    if(customersAlreadyExists){
+        return response.status(400).json({arror: 'Customers Already Exists'});
+        }
+
+    //const id = uuidv4();
+
+    customers.push({
+         name,
+         lastname,
+         cpf, 
+         rg,
+         id: uuidv4(),
+         statement: []
+        });   
     return response.status(200).send();
 });
 
