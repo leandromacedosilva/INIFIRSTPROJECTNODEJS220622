@@ -1,5 +1,4 @@
 // import do framework EXPRESS para o código
-const { request, response } = require('express');
 const express = require('express');
 
 // atribuição do método EXPRESS() a uma VAR.
