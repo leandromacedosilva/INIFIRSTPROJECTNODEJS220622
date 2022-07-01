@@ -41,7 +41,6 @@ app.post('/account', (request, response) => {
 /* usando o método GET para trazer os dados */
 app.get('/products', (request, response) => {
     // testing QUERY PARAMS
-    response.header('Access-Control-Allow-Origin', '*');
     const query = request.query;
     console.log(query);
     return response.json(['Biscoito', 'Farinha', 'Sal']);
