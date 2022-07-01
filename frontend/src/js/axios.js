@@ -5,5 +5,7 @@ axios({
     responseType: 'stream'
   })
     .then(function (response) {
-      response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+        const datainf = response.data.data;
+        console.log(datainf);
+      //response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
     });
