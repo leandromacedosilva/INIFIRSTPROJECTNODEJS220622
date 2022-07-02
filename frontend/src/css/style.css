@@ -31,6 +31,17 @@
      gap: 4rem;     
 }
 
+.container{
+    background-color: cadetblue;
+}
+
+.box-dv{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2em;
+}
+
 /* media queries */
 @media (max-width: 768px) {
     html{
