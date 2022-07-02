@@ -1,7 +1,10 @@
+/* invoca o framework EXPRESS */
 const express = require('express');
 
+/* atribuo o método EXPRESS() a uma variável */
 const app = express();
 
+/*  */
 app.get('/clients', (request, response) => {
 
     response.header('Access-Control-Allow-Origin', '*');
