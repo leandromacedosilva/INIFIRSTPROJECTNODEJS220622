@@ -5,7 +5,22 @@ axios({
     responseType: 'stream'
   })
     .then(function (response) {
-        const clients = response.data.data;
-        console.log(clients);
-      //response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+        const dataClients = response.data.data;
+        //console.log(dataClients);
+        const market = document.getElementById('market');
+
+        dataClients.forEach(dataClients => {
+
+          let template = `
+          <div class="container">
+                <div class="box-dv">
+                    <p class="box-p">${dataClients.name}</p>
+                    <p class="box-p">${dataClients.lastname}</p>
+                    <p class="box-p">${dataClients.id}</p>
+                </div>
+            </div>
+          `
+
+          market.insertAdjacentHTML('beforeend', template);
+        });
     });
