@@ -1,4 +1,4 @@
-/* invoca o framework EXPRESS */
+/* invoco o framework EXPRESS */
 const express = require('express');
 
 /* atribuo o método EXPRESS() a uma variável */
