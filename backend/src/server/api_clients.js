@@ -21,6 +21,16 @@ app.get('/clients', (request, response) => {
             name: 'Kevin',
             lastname: 'Wilson',
             id: 'b1sa2w4eds418ksih444',
+        },
+        {
+            name: 'Valphed',
+            lastname: 'Alvin',
+            id: 'e1sa2w4edsb#8ksih1l3',
+        },
+        {
+            name: 'Mayke',
+            lastname: 'Whutsus',
+            id: 'q3sa5f4edsn%2ksihH5T',
         }
     ];
 
