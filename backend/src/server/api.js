@@ -4,6 +4,9 @@ const express = require('express');
 // atribuição do método EXPRESS() a uma CONST.
 const app = express();
 
+// atribuição da porta onde a plicação irá responder
+const port = 9889;
+
 // import library UUID V4.
 const {v4: uuidv4} = require('uuid');
 
@@ -25,7 +28,7 @@ app.post('/account', (request, response) => {
     // informa que o CPF já está na base de dados.
     if(customersAlreadyExists){
         return response.status(400).json({arror: 'Customers Already Exists'});
-        }
+        };
 
     //const id = uuidv4();
     customers.push({
@@ -65,8 +68,7 @@ app.delete('/products/:id', (request, response) => {
     return response.json(['Biscoito', 'Farinha', 'Sal', 'Macarrao']);
 });
 
-// atribuição da porta onde a plicação irá responder
-app.listen(9889);
-
 // informa o STATUS do servidor em execução
-console.log('server running at http://localhost:9889');
+app.listen(port, () => {
+console.log(`Server running at http://localhost:${port}`); 
+});
