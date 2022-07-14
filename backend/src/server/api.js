@@ -21,13 +21,13 @@ app.post('/account', (request, response) => {
     const customersAlreadyExists = customers.some(
         (customers) => customers.cpf === cpf
     );
+
     // informa que o CPF já está na base de dados.
     if(customersAlreadyExists){
         return response.status(400).json({arror: 'Customers Already Exists'});
         }
 
     //const id = uuidv4();
-
     customers.push({
          name,
          lastname,
@@ -45,7 +45,7 @@ app.get('/products', (request, response) => {
     const query = request.query;
     console.log(query);
     return response.json(['Biscoito', 'Farinha', 'Sal']);
-})
+});
 
 /* usando o método PUT para alterar/atualizar item na lista */
 app.put('/products/:id', (request, response) => {
@@ -62,7 +62,7 @@ app.patch('/products/:id', (request, response) => {
 
 /* o método DELETE exclui item da lista */
 app.delete('/products/:id', (request, response) => {
-    return response.json(['Biscoito', 'Farinha', 'Sal', 'Macarrao']);  
+    return response.json(['Biscoito', 'Farinha', 'Sal', 'Macarrao']);
 });
 
 // atribuição da porta onde a plicação irá responder
