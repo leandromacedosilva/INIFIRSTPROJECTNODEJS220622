@@ -1,0 +1,24 @@
+/* 
+ * atribuição do método GET() onde definimos o ENDPOINT,
+ * e/ou ENDPOINT/PATH, RETORNOS E RESPOSTAS da aplicação, 
+ * de acordo com o método, numa ARROW FUNCTION.
+ */  
+app.get('/', (request, response) => {
+    // evio uma resposta/mensagem atraves do método SEND()
+    return response.send('Hello, world!');
+});
+
+app.get('/json', (request, response) => {
+    // resposta/mensagem atraves do método JSON()
+    return response.json({message: 'Hello, world with JSON!'});
+});
+
+/* 
+ * atribuição do método POST() onde definimos o ENDPOINT
+ * e/ou ENDPOINT/PATH,
+ * RETORNOS E RESPOSTAS da aplicação, de acordo com o método, 
+ * numa ARROW FUNCTION. 
+ */
+app.post('/', function(request, response) {
+    return response.send('Hello, world with method POST!');
+});
