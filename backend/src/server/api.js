@@ -13,12 +13,13 @@ app.use(express.json());
 // array com dados para uso em tempo de execução. 
 const customers = [];
 
+// create da rota POST 
 app.post('/account', (request, response) => {
     /* var cpf e name usando desestruturação */
     const { name, lastname, cpf, rg  } = request.body;
     // regra de negócio para cadastro
     const customersAlreadyExists = customers.some(
-        (customers)=>customers.cpf === cpf
+        (customers) => customers.cpf === cpf
     );
     // informa que o CPF já está na base de dados.
     if(customersAlreadyExists){
